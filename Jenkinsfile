@@ -25,9 +25,7 @@ node('master'){
     def userInput = input(id: 'choix', message: 'some message',ok: 'Valider', parameters: [
     [$class: 'ChoiceParameterDefinition', description: 'Environnement ?', name:'input', choices: '\nDev\nQualif\nPreprod\nProd'],
     
-    
-    
-    
+        
     
     ])
     env = userInput     
