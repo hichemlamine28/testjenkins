@@ -4,7 +4,6 @@ def TARGET_ENV = 'dev'
 def MCS_CONTAINER_IMAGE_FULLNAME = null
 def env='Qualif'
 
-
     properties(
         [
             buildDiscarder(
@@ -15,7 +14,6 @@ def env='Qualif'
             pipelineTriggers([pollSCM('* * * * *')])
         ]
     )
-
 
 node('master'){
 
@@ -122,7 +120,7 @@ node {
 
     if (server=='qualif'){
      stage('clone-qualif') {
-    //git 'https://github.com/hichemlamine28/jenkins-helloworld.git'
+ 
     checkout scm
 
         echo "Environnement clone: ${server}"  
@@ -138,7 +136,7 @@ node {
     }else if (server =='prod'){
     
       stage('clone-prod') {
-    //git 'https://github.com/hichemlamine28/jenkins-helloworld.git'
+  
     checkout scm
 
         echo "Environnement clone: ${server}"  
